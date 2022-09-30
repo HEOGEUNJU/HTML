@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container{
+            position: relative;
+            /* background-image: url(../images/imgs/우기1.jfif) ; */
+            /* opacity: 0.5; */
+            font-weight: bold;
+            height: 100vh;
+        }
+        #child{
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            opacity: 1;
+            font-weight: 100;
+            font-weight: bold;
+        }
+        #container::after{
+            content: "";
+            background: url(../images/imgs/아이유1.jfif)no-repeat center center/100% 100vh;
+            position: absolute;
+            background-size: 100% auto;
+            opacity: 0.7;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        1. 이미지 위 글자가 동일한 위치에 존재하도록 만들기
+        (=> 이미지 상단에 기타 요소 추가로 검증하기)
+        2. 배경 투명처리
+        3. 브라우저 크기 변경시 이미지 사이즈도 같이 변경
+    </pre>
+
+  <div id="container"><!-- 부모영역에 background-image -->
+    이미지텍스트
+    <div id="child"><!-- 부모를 기준으로 absolute 처리 -->
+        글자가 동일한 위치에 존재하기
+
+    </div>
+  </div>
+</body>
+</html>

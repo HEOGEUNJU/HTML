@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 내부스타일시트로 활용할 것을 권장 -->
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- / root 최상단 경로
+        . 현재위치
+        .. 현재목록정의 기준 상단(=부모) 
+        alt : alternative(대안) : 이미지가 지원되지 않을 때 글자로 대체 (웹 접근성)
+    -->    
+    <!-- 상대경로 : 현재를 기준으로 한 위치-->
+    <img src="../../images/imgs/digda.jpg" alt="디그다jpg"> 
+    <!-- width="300px" height="300px"> -->
+    <!-- 절대경로 / 보안상의 이유로 내 컴퓨터 정보를 로컬로 표시할 수 없다-->
+    <img src="D:\A_TeachingMaterial\vscodeWeb\geunju\images\imgs" alt="절대경로이미지">
+    <!-- localhost이후의 경로로 접근하면 이미지 표현 가능 -->
+    <img src="/images/imgs/digda.jpg" alt="디그다jpg">
+</body>
+</html>

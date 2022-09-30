@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- radio버튼 사용시 name값을 공통으로 하여 그룹핑시킬 필요가 있다. -->
+    <input type="radio" name="gender" value="male"> 남자
+    <input type="radio" name="gender" value="female" checked> 여자
+    <!-- <input type="button" value="선택버튼" onclick="f_checked();"> -->
+    <hr>
+
+    <input type="checkbox" name="hobby" value="java"> 자바
+    <input type="checkbox" name="hobby" value="javascript"> 자바스크립트
+    <input type="checkbox" name="hobby" value="html"> HTML
+    <input type="checkbox" name="hobby" value="css"> CSS
+    <input type="button" value="버튼" onclick="f_checked()">
+
+    <script>
+        //document객체 - getElementsByName() : 선택자의 역할을 하는 메소드..
+        function f_checked() {
+            var radios = document.getElementsByName("gender");
+            // console.log(radios);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    // console.log(radios[i].value);
+                    // alert("선택한 성별은" + radios[i].value);
+                }
+            }
+
+            //여기부터 체크박스 값을 콘솔로 표현할 코드를 입력하세요
+            var checkVals = "";
+            var checkboxes = document.querySelectorAll("input");
+            // console.log(checkboxes.length)
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    // console.log(checkboxes[i].value);
+                    checkVals += checkboxes[i].value + " ";
+                }
+                // alert("선택한 성별은" + radios[i].value + "  체크박스는" + checkboxes[i].value);
+            }
+            console.log("내가 선택한 취미: " + checkVals);
+
+        }
+    </script>
+</body>
+
+</html>

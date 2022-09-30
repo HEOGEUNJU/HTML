@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            /* 공백제거 처리*/
+            display: block;
+            float: left;
+        }
+
+        #parent {
+            position: relative;
+            /* child의 부모 조건을 적용 */
+            overflow: hidden;
+            top: 100px;
+            left: 200px;
+            border: 10px inset olive;
+            width: 100px;
+            height: 100px;
+            /* 부모영역안 컨텐츠의 용량이 초과되었을 때 제어 */
+        }
+
+        .child {
+            position: absolute;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="id_chd1" class="child" style="left:0px;">
+            <img src="../images/imgs/검은사제들.jfif" alt="">
+            <img src="../images/imgs/범죄도시.jfif" alt="">
+            <img src="../images/imgs/뷰티인사이드.jfif" alt="">
+            <img src="../images/imgs/저스티스리그.jfif" alt="">
+        </div>
+        <div id="id_chd2" class="child" style="left: 400px;">
+            <img src="../images/imgs/조커.jfif" alt="">
+            <img src="../images/imgs/죽음의성물.jfif" alt="">
+            <img src="../images/imgs/트루엘라.jfif" alt="">
+            <img src="../images/imgs/한산.jfif" alt="">
+        </div>
+    </div>
+    <script>
+        // document.getElementById();          //id만 Element뒤에 s가 안붙는 이유
+        // document.getElementsByClassName     //: 밑에 목록들은 배열을 통으로 가져오고
+        // document.getElementsByName          // id는 하나의 값만 가져오기 때문에
+        // document.getElementsByTagName
+
+        //요즘에는 이걸 많이 사용 아이디일때는 "# id" 클래스는 ". class" 요소는 "tag"
+        // document.querySelector("") //첫번째 요소만 가져온다
+        // document.querySelectorAll() //배열 형태의 데이터를 가져옴
+
+        var v_chd1 = document.querySelector("#id_chd1");
+        var v_chd2 = document.getElementById("id_chd2");
+        // alert("인라인스타일정보있음? [ " + v_chd1.style.left + " ]")
+        //인라인스타일로 초기화가 필요하지만 직접 inline style을 정의했음
+
+        var v_mvWidth = 1; //이동할 거리 데이터를 셋팅
+        function f_move() {
+            console.log(parseInt(v_chd1.style.left) - v_mvWidth);
+            v_chd1.style.left = parseInt(v_chd1.style.left) - v_mvWidth + "px";
+            v_chd2.style.left = parseInt(v_chd2.style.left) - v_mvWidth + "px";
+
+            //프레임 반복하기
+            if (parseInt(v_chd1.style.left) == -400) {
+                v_chd1.style.left = "400px"
+            }
+            if (parseInt(v_chd2.style.left) == -400) 
+                v_chd2.style.left = "400px"
+            
+
+
+            setTimeout(f_move, 10);//재귀호출
+        }
+        f_move();//실행하고
+
+    </script>
+</body>
+
+</html>

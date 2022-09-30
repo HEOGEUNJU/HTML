@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 140px;
+        }
+
+        #wrapper {
+            border: 2px solid red;
+            width: 220px;
+            height: 500px;
+            position: relative;
+        }
+
+        .btn {
+            position: absolute;
+            left: 110px;
+        }
+
+        .panel {
+            position: absolute;
+            top: 30px;
+        }
+    </style>
+    <script>
+        var v_panel;//전역변수로 변경하여 사용하였어요
+        var v_text;
+        window.onload = function () {
+            v_panel = document.querySelectorAll(".panel");
+            // var v_panel2 = document.getElementsByClassName("panel");
+            // console.log(v_panell.length + " | " + v_panel2.length);
+            v_text = document.querySelector("#id_text")
+            v_text.value = 1 + "/" + v_panel.length;
+        }
+
+        var v_layerIndex = 0;
+        function f_next() {
+            //판넬 z-index 초기화 필요.
+            for(var i=0; i<v_panel.length; i++){
+                v_panel[i].style.zIndex = 1;
+            }
+            v_layerIndex++; // 1 = 2번째 페이지 오픈
+            //마지막 레이어에 도달했을 때 처음 레이어로 다시 되돌리기..
+            if (v_layerIndex == v_panel.length) {
+                v_layerIndex = 0;
+            }
+            v_panel[v_layerIndex].style.zIndex = 999;
+            v_text.value = v_layerIndex + 1 + "/" + v_panel.length;
+        }
+        function f_prev() {
+            // 판넬 z-index 초기화 필요.
+            for(var i=0; i<v_panel.length; i++){
+                v_panel[i].style.zIndex = 1;
+            }
+            v_layerIndex--; // 1 = 2번째 페이지 오픈
+            //마지막 레이어에 도달했을 때 처음 레이어로 다시 되돌리기..
+            if (v_layerIndex == -1) {
+                v_layerIndex = v_panel.length;
+            }
+            v_panel[v_layerIndex].style.zIndex = 999;
+            v_text.value = v_layerIndex + 1 + "/" + v_panel.length;
+        }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="btn">
+            <input type="button" value="&lt;" onclick="f_prev();">
+            <input id="id_text" value="" size="1">
+            <input type="button" value="&gt;" onclick="f_next();">
+        </div>
+        <div class="panel" style="z-index: 999;">
+            <table border="1">
+                <tr>
+                    <td><img src="../images/imgs/검은사제들.jfif" alt=""></td>
+                    <td><img src="../images/imgs/범죄도시.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/imgs/뷰티인사이드.jfif" alt=""></td>
+                    <td><img src="../images/imgs/저스티스리그.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/imgs/조커.jfif" alt=""></td>
+                    <td><img src="../images/imgs/죽음의성물.jfif" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel" style="z-index: 888;">
+            <table border="1">
+                <tr>
+                    <td><img src="../images/imgs/트루엘라.jfif" alt=""></td>
+                    <td><img src="../images/imgs/한산.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/imgs/digda.jpg" alt=""></td>
+                    <td><img src="../images/imgs/라이츄.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/imgs/아이유1.jfif" alt=""></td>
+                    <td><img src="../images/imgs/아이유2.jfif" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel" style="z-index: 888;">
+            <table border="1">
+                <tr>
+                    <td><img src="../images/imgs/아이유3.jfif" alt=""></td>
+                    <td><img src="../images/imgs/아이유4.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/imgs/우기1.jfif" alt=""></td>
+                    <td><img src="../images/imgs/우기2.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/imgs/우기3.jfif" alt=""></td>
+                    <td><img src="../images/imgs/우기4.jfif" alt=""></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

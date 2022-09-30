@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        자바스크립트
+        자바와는 관련 없음
+        비슷한 점은 c언어로부터 출발한 언어라는 공통점이 있다.
+
+        원래 사용자(client)쪽 데이터검증 (validation)을 위해 만들어졌지만,
+        구글이 AJAX(비동기통신)을 이용해 GMAIL, GOOGLE MAP 등을 성공시킨 이후
+        급속도로 성장하며 자바와 더불어 라이브러리가 가장 많은 언어로 자리잡음
+
+        브라우저를 컨트롤하는 언어는 현재 자바스크립트가 유일하다
+        브라우저마다 스크립트 엔진을 따로 가지고 있기 때문에 호환성 문제가 있다
+        호환성 여부는 caniuse.com에서 확인하고, 공부는 mdn(mozilla develope network)
+        를 활용하면 좋음. 영어공부도 하면 더 좋음.
+    </pre>
+    <script>
+        // let v_mascot = "꿈돌이";
+        // v_mascot = 100;    //let은 재다시 let으로 재 선언은 안되고 재할당만 가능
+        // const v_mascot = "꿈돌이";
+        // v_mascot = 100;    //const은 재선언은 안되고 같은 타입일 경우에만 재할당 가능
+        var v_mascot = "꿈돌이";
+        var v_mascot = 100;   /*  const은 재선언은 안되고 같은 타입일 경우에만 재할당 가능 */
+        var v_mascot = true;
+        var v_mascot = undefined;
+        var v_mascot = null;
+
+        alert(v_mascot);
+        console.log(typeof v_mascot);
+    </script>
+</body>
+
+</html>

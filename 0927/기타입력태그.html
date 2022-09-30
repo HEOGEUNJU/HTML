@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 서버에 파일 업로드시 필요한 입력양식요소 -->
+    <input type="file" accept=".jpg, .png, .gif"><br>
+
+    <!-- 브라우저마다 모양이 달라서 디자이너들은 사용을 꺼리는 요소들.. -->
+    <input type="date" id = "id_date" onchange="f_date(this)"><br>
+    <input type="color" onchange="f_color(this)">
+    <script>
+        function f_date(p_this) {
+            alert("선택한 date : " + id_date.value); // 요소의 id로 접근
+            // alert("선택한 날짜 : " + p_this.value); // this를 통해 접근
+        }
+        function f_color() {
+
+        }
+    </script>
+
+</body>
+
+</html>
