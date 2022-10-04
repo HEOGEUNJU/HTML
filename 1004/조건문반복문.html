@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    //조건문 반복문의 문법은 자바와 거의 같다
+    //=>자바와 자바스크립트 모두 C언어로부터 출발되었기 때문에..
+
+    //문자열은 ""(공백)만 false로 형변환되고 나머지는 true로 인식
+    //숫자는 0만 false로 형변환되고 나머지는 true로 인식
+    // true로 사용하면 4자 코딩, !0으로 쓰면 2자로 2자를 절약하는 코딩
+    if ("0") {
+        //    alert("참이야")
+    } else {
+        //    alert("거짓이야")
+    }
+
+
+    // 객체순회 - for in 
+    for (var x in window){
+        console.log(window[x]);
+
+    }
+
+    //break, continue
+    var msg = "";
+    for(var i=0; i<10; i++){
+        if(i==7||i==3){
+            // break; //밖으로 나가서 처음 만나는 조건문을 빠져나감
+            continue; //해당되는 항목을 더 이상 실행하지 않고 스킵
+        }
+        msg += i +", ";
+
+    }
+    document.write(msg)
+
+</script>

@@ -22,18 +22,44 @@
         를 활용하면 좋음. 영어공부도 하면 더 좋음.
     </pre>
     <script>
+         "use strict"//선언 시 var을 선언하지 않으면 그 구문은 에러가 뜬다.
         // let v_mascot = "꿈돌이";
-        // v_mascot = 100;    //let은 재다시 let으로 재 선언은 안되고 재할당만 가능
+        // let v_mascot = 100;    //let은 다시 let으로 재선언은 안되고 재할당만 가능
         // const v_mascot = "꿈돌이";
-        // v_mascot = 100;    //const은 재선언은 안되고 같은 타입일 경우에만 재할당 가능
+        // const v_mascot = 100;    //const은 재선언은 안되고 같은 타입일 경우에만 재할당 가능
         var v_mascot = "꿈돌이";
-        var v_mascot = 100;   /*  const은 재선언은 안되고 같은 타입일 경우에만 재할당 가능 */
-        var v_mascot = true;
-        var v_mascot = undefined;
-        var v_mascot = null;
+        // var v_mascot = 100;   /* var은 재선언, 재할당 모두 가능 */
+        // var v_mascot = true;
+        // var v_mascot = undefined;
+        // var v_mascot = null;
 
-        alert(v_mascot);
-        console.log(typeof v_mascot);
+        // alert(v_mascot);
+        //변수 타입은 크게 기본(primitive)형과 참조(reference,/객체)형이 있음
+        //기본형은 number, string, boolean이 있고 / .을 찍을 수 없다(속성에 접근x)
+        //참조형은 배열(array)과 JSON(object)가 있음/ .을 찍을 수 있다.
+        // console.log(typeof v_mascot);
+
+        var v_sansu = "123" + 456; //문자열 뒤에 더하기 연산자와 숫자가 온다면 문자로 인식
+        var v_sansu2 = "123" * 456;//다른 연산자가 오면 숫자로 연산값 도출     
+        console.log(v_sansu)
+        console.log(v_sansu2)
+
+        //alert(parseInt("ABC123")) //NAN : Not A Number
+        //alert(parseInt("123ABC")) //문자열을 분리시키고 숫자만 반환
+
+        if("123" == 123){ //loose compare, 동등연산자(값이 같다면 자동으로 형변환해준다)
+            alert("뜸1");
+        }
+
+        if("123" === 123){ //strict compare, 일치연산자
+            alert("뜸2");
+        }
+
+        if([] == []){   //배열은 객체로 볼 수 있기 때문에 값이 같더라도 다른 주소를 가지고 있으므로 다름
+            alert("뜸3")
+        }
+
+
     </script>
 </body>
 

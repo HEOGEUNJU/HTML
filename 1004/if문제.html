@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>숫자 2개와 연산자 1개를 입력하고 결과 출력</h3>
+    <!-- <div id="id_disp">div1</div>
+    <div>div2</div>
+    <div>div3</div> -->
+    <input type="button" value="계산" onclick="calc()">
+    <br>
+    결과 값 : <input type = "text" id= "id_disp">
+    <script>
+        function calc() {
+            //    var v_pmpt = prompt("1번째는 필수", "2번째는 옵션")
+            //    alert(v_pmpt + typeof v_pmpt)
+            var a = parseInt(prompt("숫자를 입력하세요1"));
+            var b = parseInt(prompt("숫자를 입력하세요2"));
+            var c = prompt("연산자를 입력하세요", "+,-,*,/ 중 하나");
+
+            var sum = 0;
+            // alert(a+","+c+","+b);
+
+            // if(c=='+'){
+            //     sum = a+b;
+            // }else if(c =='-'){
+            //     sum = a-b;
+            // }else if(c== '*'){
+            //     sum = a*b;
+            // }else if(c=='/') {
+            //     sum = a/b;
+            // }else {
+            //     alert("사칙연산자를 입력하세요");
+            //     return calc();
+            // }
+
+            switch (c) {
+                case '+':
+                    sum = a + b;
+                    break;
+
+                case '-':
+                    sum = a - b;
+                    break;
+
+                case '*':
+                    sum = a * b;
+                    break;
+
+                case '/':
+                    sum = a / b;
+                    break;
+
+                default:
+                    alert("사칙연산자를 입력하세요");
+                    return calc();
+
+            }
+            // document.write(sum);
+            // document.getElementById('id_disp').innerHTML = sum;
+            // document.getElementsByTagName('div')[2].innerHTML = sum;
+            // document.querySelector('#id_disp').innerHTML = sum;
+            // document.querySelector('div').innerHTML = sum;
+            // document.querySelectorAll('div')[1].innerHTML = sum;
+            // document.querySelector('#id_disp').value = sum;
+            document.querySelector('input[type=text]').value = sum;
+        }
+    </script>
+</body>
+
+</html>
