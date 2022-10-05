@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    var v_myName = "내 이름";
+    function f_merong() {
+        var sum = [];
+        for (let i = 0; i < 10; i++) {
+            sum.push(i);
+        }
+        alert(i);
+        console.log(sum);
+        var v_myName2 = "내 이름2";
+        alert(v_myName + "," + v_myName2);
+    }
+    f_merong();
+    alert(v_myName + "," + v_myName2); // name2 error
+</script>
+<body>
+    <pre>
+        변수 키워드 3종
+        var 
+            함수 범위에서 유효(function scope)
+            재선언, 재할당 모두 가능
+            변수선언 키워드 생략이 가능함
+          =>개발자가 오류를 발생시킬 가능성을 높임
+            위와 같은 단점 보완을 위해 아래 두가지 키워드 생성됨
+        let
+            블록 범위에서 유효(block scope) 
+            재선언 불가, 재할당 가능
+        const
+            블록 범위에서 유효(block scope)
+            재선언, 재할당 모두 불가
+            선언과 동시에 초기화를 반드시 해줘야 함
+            보통 상수의 값을 대입
+            보통은 대문자를 사용해서 선언(강제는 아님)
+
+    </pre>
+</body>
