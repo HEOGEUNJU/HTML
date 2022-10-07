@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <table border="1">
+        <tbody id="id_tbody">
+            <tr>
+                <th><a href="javascript:f_sortTr(0)"> 제목</a></th>
+                <th><a href="javascript:f_sortTr(1)">글쓴이</a></th>
+                <th><a href="javascript:f_sortTr(2)">내용</a></th>
+                <th><a href="javascript:f_sortTr(3)">날짜</a></th>
+            </tr>
+            <tr>
+                <th>달러구트 꿈 백화점</th>
+                <th>이미예</th>
+                <th>주문하신 꿈은 매진입니다</th>
+                <th>2020-07-08</th>
+            </tr>
+            <tr>
+                <th>주린이가 알고싶은 최다질문 77</th>
+                <th>염승환</th>
+                <th>염블리와 함께라면 주식이 쉽고 재미있다</th>
+                <th>2021-07-26</th>
+            </tr>
+            <tr>
+                <th>미드나잇 라이브러리</th>
+                <th>매트 헤이그</th>
+                <th>1주년 스페셜 에디션</th>
+                <th>2021-04-28</th>
+            </tr>
+            <tr>
+                <th>공정하다는 착각</th>
+                <th>마이클 샌델</th>
+                <th>능력주의는 모두에게 같은 기회를 제공하는가</th>
+                <th>2020-12-01</th>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var v_tbody = document.querySelector("#id_tbody");
+        //문서를 모두 준비시키고 스크립트를 실행합니다.
+        var v_trs = document.querySelectorAll("tr");
+        console.log("!!!!!!!!!!!!!!" +v_trs);
+        var v_arrTr = [];
+        for (var i = 1; i < v_trs.length; i++) {  // index 0번은 헤더정보라서 제외
+            v_arrTr.push(v_trs[i]);
+        }
+        console.log("!!!!!!!!!!!!!!" +v_trs);
+
+        function f_sortTr(p_idx) {
+            //각 항목 정렬하기 - 자식요소 선택에 children() 사용
+            v_arrTr.sort(function (a, b) { //a, b는 tr요소 자체
+                if (a.children[p_idx].innerHTML >= b.children[p_idx].innerHTML) {
+                    return 1;
+                }
+                return -1;
+            });
+
+            //정렬 내용 반영하기 - appendChild()를 이용해서 요소 이동하기
+            for (var i = 0; i < v_arrTr.length; i++) {
+                console.log(v_arrTr[i]);
+                v_tbody.appendChild(v_arrTr[i]);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

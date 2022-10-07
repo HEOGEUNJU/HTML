@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function f_input() {
+            var arr = new Array();
+            while (true) {
+                var name = prompt("이름: ");
+                if (name == " " || name == null) break;
+                arr.push(name);
+            }
+            document.querySelector("div").innerHTML = arr;
+        }
+        function f_output() {
+            var arr = [];
+            while (1) {
+                var num = prompt("숫자를 입력:");
+
+                //중복제거
+                if (arr.indexOf(num) != -1) {//-1은 없는 데이터를 의미
+                    alert("말복데이터");
+                } else {
+                    arr.push(num);
+                }
+                //갯수체크
+                if (arr.length >= 5) break;
+            }
+            document.querySelectorAll("div")[1].innerHTML = arr;
+        }
+    </script>
+</head>
+
+<body>
+    <h3>prompt로 이름을 반복 입력하고 출력 <br>
+        (공백 또는 취소(null) 눌렀을 때 종료</h3>
+    <input type="button" value="입력" onclick="f_input()">
+    <div></div>
+
+    <h4>중복되지 않는 숫자 5개 받기 - indexOf를 이용하기</h4>
+    <input type="button" value="출력" onclick="f_output()">
+    <div></div>
+</body>
+
+</html>
