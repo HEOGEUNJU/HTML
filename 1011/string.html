@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    var v_str = "전혜수, 박인수, 윤호연, 박인성, 김준일";
+
+    alert(v_str.length);
+
+    //문자열에 .을 찍는 순간 자동으로 string객체로 변화
+    // string ==> String(WrapperClass)참조형으로 변화
+    //원시타입(기본타입) => .을 쓸 수 없다.
+    //객체타입 만 .으로 속성과 메소드에 접근 가능
+
+    console.log(v_str.charAt(1));
+    console.log(v_str.charCodeAt(1));
+    console.log(v_str.indexOf("윤호연"));
+
+    var a = "에이";
+    var b = "비";
+    var c = "씨";
+    var cc = a.concat(b, c)
+
+    console.log(cc[2]);
+
+    
+    /* 찾는 대상은 문자열 또는 정규식 형태로 지정할 수 있다.
+     replace(oldstr) 찾는 대상이 문자열일 경우 첫번째 요소만 적용
+     새롭게 만들어진 replaceAll()을 활용하면 모든 요수를 대상으로 적용 */
+
+    // var v_replace = v_str.replace("김준일", "임준일"); //새로운 문자열을 반환
+    // console.log(v_replace);
+    // console.log(v_str)
+    var regex = /김준일/g;
+    var v_replace = v_str.replace(regex, "임준일"); //새로운 문자열을 반환
+    console.log(v_replace);
+    console.log(v_str) //원본은 변경되지 않음
+
+    //substr(str, length) | substring(str,end) | slice(str,end)
+    console.log(v_str.substring(1,2)) //end는 포함하지 않는다.
+    console.log(v_str.substr(1,2)) //시작부터 2글자
+
+    var v_split = v_str.split(",");//문자열을 구분자로 나누어 배열반환
+    console.log(v_split[4])
+
+        
+</script>

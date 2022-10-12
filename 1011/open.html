@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="새창open" onclick="f_winOpen()">
+    <input type="button" value="새창close" onclick="f_winCls()">
+
+    <script>
+        var win;
+        function f_winOpen(){
+            win = open("새창.html", "","width = 500, height : 300, top=200 left=100");
+        }
+        function f_winCls(){
+            win.close();
+        }
+
+    </script>
+</body>
+
+</html>
