@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>location</h2>
+    <h4>https://n.news.naver.com/mnews/article/001/0013498102?rc=N&ntype=RANKING</h4>
+    <input type="button" value="페이지이동" onclick="f_go()">
+    <input type="button" value="페이지reload" onclick="f_reload()">
+    <input type="button" value="페이지rep" onclick="f_rep()">
+    <script>
+        function f_go(){
+            // location.assign("http://localhost/HomeWork/youtube.html")
+            location.href="http://daum.net"
+        }
+        //페이지 리로드 - 특별한 경우를 제외하고 권장하지 않음
+        function f_reload(){
+            location.reload();
+        }
+        //페이지를 다른 페이지로 대체
+        function f_rep(){
+            location.replace("http://localhost/HomeWork/youtube.html")
+        }
+        /*
+            href vs replace
+            href는 서버에 요청할 때도 있고,
+            브라우저가 캐쉬한 파일을 보여줄 수 도 있음
+            replace는 서버에 항상 새롭게 요청
+            이동 후 이전 페이지로 이동할 수 없다. 
+        */
+
+        var url = document.createElement("a");
+        url.href ="http://localhost/HomeWork/youtube.html"
+        
+        //hash
+        console.log("hash", url.host)
+        console.log("host", url.host)
+        console.log("hostname", url.host)
+        console.log("pathname", url.host)
+        console.log("port", url.host)
+        console.log("protocol", url.host)
+        console.log("search", url.host)
+
+    </script>
+
+    <a href="https://n.news.naver.com/mnews/article/001/0013498102?rc=N&ntype=RANKING"></a>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #id_disp {
+            font-size: 0%;
+        }
+
+        img {
+            width: 300px;
+            height: 400px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="id_disp">
+        <img src="../images/imgs/우기1.jfif" alt="">
+        <img src="../images/imgs/우기2.jfif" alt="">
+        <img src="../images/imgs/우기3.jfif" alt="">
+        <img src="../images/imgs/우기4.jfif" alt="">
+        <!-- appendChild를 통해서여기에 짤래내기해서 붙임.. -->
+    </div>
+
+    <input type="button" value="<<" id="autoL">
+    <input type="button" value="정지" id="stop">
+    <input type="button" value="&gt;&gt;" id="autoR">
+
+    <script>
+        var v_mv = document.querySelector("#move");
+        var v_autoR = document.querySelector("#autoR");
+        var v_autoL = document.querySelector("#autoL");
+        var v_disp = document.querySelector("#id_disp");
+        var v_stop = document.querySelector("#stop");
+        var to;
+
+        v_stop.addEventListener("click", function () {
+            clearTimeout(to);   
+        })
+        
+        v_autoR.addEventListener("click", function fn1() {
+            var last = v_disp.lastElementChild;
+            v_disp.insertBefore(last, v_disp.firstChild);
+            to = setTimeout(fn1, 1000);
+        });
+        
+        v_autoL.addEventListener("click", function fn1() {
+            var first = v_disp.firstElementChild;
+            v_disp.insertBefore(first, v_disp.lastChild);
+            to = setTimeout(fn1, 1000);
+        });
+
+
+        //proxy pattern
+        var exist = false;
+        
+    </script>
+</body>
+
+</html>

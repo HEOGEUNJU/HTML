@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #id_disp{
+            border: 1px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    버튼눌렀을 때 네이버로 연결되는 하이퍼링크 만들기<br>
+    <input type="button" value="버튼" onclick="link()">
+    <h5>요소 생성하기</h5>
+    <input type="button" value="추가" id="id_add">
+    <h5>이미지 추가하기</h5>
+    <input type="button" value="img추가" id="img_add">
+    <div id="id_disp"></div>
+    <script src = "../js/random.js"></script>
+    <script>
+        var v_disp = document.querySelector("#id_disp");
+        var v_idAdd = document.querySelector("#id_add");
+        var v_imgAdd = document.querySelector("#img_add");
+
+        function f_ranColor(){
+            //rgb(0,255,0)
+            return "rgb("+f_random(0,255)+","+ f_random(0,255)+","+ f_random(0,255)+")"
+        }
+        //이벤트 부여하기
+        v_idAdd.addEventListener("click",function(){
+            var v_h1 = document.createElement("h1");
+            v_h1.innerHTML = "어서 집에가고싶어";
+            v_h1.style.color = f_ranColor(); //랜덤색상
+            v_h1.style.backgroundColor = f_ranColor(); //랜덤색상
+            // console.log(v_h1)
+            v_disp.appendChild(v_h1)
+        });
+
+        //이미지 이벤트 부여하기
+        var v_index =1;
+        v_imgAdd.addEventListener("click",function(){
+            /* var v_imgAdd = document.createElement("img");
+            v_imgAdd.src = "../images/imgs/main" + v_index + ".png"
+            v_imgAdd.setAttribute("alt", "배스킨먹고싶다.")
+            v_disp.appendChild(v_imgAdd);
+            v_index++;
+            if(v_index >= 10) v_index =1
+            */
+           
+           //★문자열을 이요해서 요소 생성하기
+           var v_str = "<img src = '../images/imgs/우기"+v_index+".jfif' alt = ''>"
+           v_index++;
+           v_disp.innerHTML += v_str;
+           if(v_index >= 4) v_index =1
+        }) 
+           
+
+        function add(){
+            alert("이벤트가 실행되면 여기로 오죠")
+        }
+        function link(){
+            var v_tagA = document.createElement("a");
+            // v_tagA.href = "http://naver.com";
+            v_tagA.setAttribute("href" ,"http://naver.com" )
+            v_tagA.innerHTML = "네이버로 이동";
+            v_tagA.style.display = "block";
+            // console.log(v_tagA);
+            v_disp.appendChild(v_tagA);
+        }
+    </script>
+</body>
+</html>

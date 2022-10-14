@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tbody id="id_tbody">
+            <tr>
+                <th> 제목</th>
+                <th>글쓴이</th>
+                <th>내용</th>
+                <th>날짜</th>
+            </tr>
+            <tr>
+                <th>달러구트 꿈 백화점</th>
+                <th>이미예</th>
+                <th>주문하신 꿈은 매진입니다</th>
+                <th>2020-07-08</th>
+            </tr>
+            <tr>
+                <th>주린이가 알고싶은 최다질문 77</th>
+                <th>염승환</th>
+                <th>염블리와 함께라면 주식이 쉽 고 재미있다</th>
+                <th>2021-07-26</th>
+            </tr>
+            <tr>
+                <th>미드나잇 라이브러리</th>
+                <th>매트 헤이그</th>
+                <th>1주년 스페셜 에디션</th>
+                <th>2021-04-28</th>
+            </tr>
+            <tr>
+                <th>공정하다는 착각</th>
+                <th>마이클 샌델</th>
+                <th>능력주의는 모두에게 같은 기회를 제공하는가</th>
+                <th>2020-12-01</th>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var v_trs = document.querySelectorAll("tr");
+        
+        for(let i=0; i<v_trs.length; i++){
+            console.log(">>",i);
+            v_trs[i].onmouseover = function(){
+             console.log(">>>",i);
+             v_trs[i].style.backgroundColor = "pink";
+         }   
+         v_trs[i].onmouseout = function(){
+             v_trs[i].style.backgroundColor = "white";
+         }   
+        }
+
+    </script>
+</body>
+</html>

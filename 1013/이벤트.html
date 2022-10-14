@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseover="f_long()" 
+        onmouseout="f_stop()">길어지슈</div>
+    <div onmouseover="f_tall()" 
+        onmouseout="f_stop()">커지슈</div>
+    <div onmouseover="f_wide()" 
+        onmouseout="f_stop()">널벙지슈</div>
+
+        
+       <script>
+        function f_long(p_this){
+            console.log(p_this.style.width);
+
+        }
+       </script> 
+        
+</body>
+</html>
