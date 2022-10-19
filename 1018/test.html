@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        var v_tagImg = Image;
+        $(function(){
+            $("button").on("click", function(){
+                
+            v_tagImg = $("#disp").attr("src", "../images/imgs/우기1.jfif");
+            $("#disp").append(v_tagImg);
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <input type="button" value="이미지추가">
+    
+    <div id = "disp" ></div>
+    
+</body>
+</html>

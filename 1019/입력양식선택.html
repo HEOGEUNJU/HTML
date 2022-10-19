@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //input 요소
+            // $('input').css("border", "double 4px")
+            $(':input').css("border", "double 4px")
+
+            //input type=button인 요소
+            // $('input[type=button]').css("background-color" , "#00ffbb")
+            $('input:button').css("background-color", "#00ffbb");
+            
+            //type속성이 text, password인 요소
+            $(':text, :password').css("background-color", "#1666")
+            // $('[type=text],[type=password]').css("background-color" , "#1666")
+            
+            //type속성이 radio, checkbox인 요소
+            $(':radio, :checkbox').css("background-color", "#00aacc")
+            
+            //type속성이 submit인 요소
+            $(':submit').css("background-color", "#00aabb")
+            
+            //type속성이 reset인 요소
+            $(':reset').css("border", "solid 4px")
+            
+            //type속성이 file, image인 요소
+            $(':file,:image').css("border", "dotted 4px")
+
+            //button요소와 input type이 button인 요소
+            $(':button').css("background-color", "hotpink")
+
+        })
+
+    </script>
+    <style>
+        [type=radio],
+        [type=checkbox] {
+            appearance: none;
+            /* 기본 적용된 스타일을 제거해줌 */
+            width: 1em;
+            height: 1em;
+
+        }
+
+        [type=radio] {
+            border-radius: 100%;
+
+        } 
+
+        /* input[type='radio']:checked input[type='checkbox']:checked {
+            background-color: #00ffbb;
+        } */
+    </style>
+</head>
+
+<body>
+    <form action="nofile.jsp" method="get">
+        Text : <input type="text" name="id" /> <br>
+        Password : <input type="password" name="pw" /> <br>
+        Radio :
+        <input type="radio" name="rdo" id="radioA" value="A" checked>A
+        <input type="radio" name="rdo" id="radioB" value="B">B <br>
+        Checkbox :
+        <input type="checkbox" name="chkbox" id="checkbox1" value="1"> 1
+        <input type="checkbox" name="chkbox" id="checkbox2" value="2" checked /> 2 <br>
+        TextArea <br>
+        <textarea rows="10" cols="30" id="myTextArea"></textarea> <br>
+        Image :
+        <input type="image" src="../images/imgs/우기1.jfif" width="50" height="50"> <br>
+        File :
+        <input type="file"> <br>
+        Buttons :
+        <button>전송</button>
+        <button type="button" id="normalBtn">Normal</button>
+        <button type="submit" id="submitBtn">Submit</button>
+        <button type="reset" id="resetBtn">Reset</button> <br>
+
+        <input type="button" value="일반버튼">
+        <input type="submit" value="전송버튼">
+        <input type="reset" value="초기화버튼">
+    </form>
+
+</body>
+
+</html>
