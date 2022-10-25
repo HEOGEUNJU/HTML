@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        div{
+            display: inline-flexbox;
+        }
+    </style>
+
+</head>
+<body>
+    <div data-num = "n1">div1</div>
+    <div data-num = "n3">div2</div>
+    <div data-num = "n5">div3</div>
+    <div data-num = "n6">div4</div>    
+    <hr>
+    <input name="n_txt" value="aa">
+    <input name="n_txt" value="bb">
+    <input name="n_txt" value="aa">
+    <input name="n_txt" value="bb">
+    
+    <script>
+        //name = n _txt 텍스트필드에 'div2' 내용 넣기
+        // $('input').val($('div').eq(1).html());
+        // $('[name="n_txt"]').val($('div').eq(0).html());
+        
+        //div1, div4의 컨텐츠 내용을 '박카스D로 바꾸기'
+        $('div').html(function(p_idx, p_val){
+            if(p_idx == 0 || p_idx == 3){
+                return "박카스D";
+            }
+        });
+        
+        //input태그중 value =bb인 것만 속성type을 radio로 변경
+        $('input').val(function(p_idx, p_val){
+            if(p_val == 'bb') {
+                // this.type = "radio"; // js방식
+                $(this).attr('type','radio'); //jq방식
+            }
+            return p_val;
+        });
+
+        //div채그 innerHtml에 문자 'd'가 있는 것만
+        //글자색 주황, 배경색 검정, font-size 2배로 변경
+        $('div').html(function(i, v){
+            console.log(i, v); // v = innerHTML정보
+            if(v.indexOf('d') != -1){
+                $(this).css("color" ,"gold")
+                    .css('background-color' , "black")    
+                    .css('font-size','2em')
+            }
+
+        })
+    </script>
+</body>
+</html>

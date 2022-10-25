@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10%;
+        }
+        #btn{
+            display: none;
+        }
+        .shadow {
+            box-shadow: 5px 5px 1px lightblue;
+        }
+        .shadow1 {
+            box-shadow: 5px 5px 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="disp"></div>
+        <input type="button" value="돌리기" id="btn">
+        <input type="button" value="방아쇠" id="trigger">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // 제이쿼리 객체로 만들어진 변수임을 알리는 접두어 $을 붙임
+        var $disp = $('#disp'); //출력공간 변수에 담음. 
+
+        // 원하는 갯수만큼 동적이미지 생성
+        var v_cls = "";
+        for (var i = 1; i <=4 ; i++){
+            // if(i%2) v_cls = "mysom";
+            // else v_cls = "yousom";
+        //  $disp.append($('<img>').attr("src", "../images/imgs/우기"+ i +".jfif")
+        //                         .attr("class",v_cls));
+         $('<img>').attr("src", "../images/imgs/우기"+ i +".jfif")
+                   .css("width",50*i + "px")
+                   .css("height",50*i + "px").appendTo($disp)
+        }
+
+        //이미지 rotation
+        $('#btn').on('click',function(){
+           var $child = $disp.children();
+           // filter()로 대상을 한번 더 걸러낸 후 addClass적용
+           $child.filter(".mysom").addClass('shadow');
+           $child.filter(".yousom").addClass('shadow1');
+            $disp.append($child.eq(0)); //첫번째 항목을 영역 뒤에 붙임- 요소 이동
+        });
+
+        //trigger 지정
+        $('#trigger').on('click',function(){
+            $('#btn').trigger('click');
+        });
+
+    </script>
+</body>
+</html>

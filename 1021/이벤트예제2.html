@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {width:100px;height:100px;}
+        input[type = button] {
+            display: none;
+        }
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
+
+</head>
+<body>
+    <img src="../images/imgs/우기1.jfif" data-src="../images/imgs/아이유1.jfif">
+    <img src="../images/imgs/우기3.jfif" data-src="../images/imgs/아이유2.jfif">
+    <img src="../images/imgs/우기4.jfif" data-src="../images/imgs/아이유3.jfif">
+    <img src="../images/imgs/우기5.jfif" data-src="../images/imgs/아이유4.jfif">
+    <img src="../images/imgs/우기6.jfif" data-src="../images/imgs/검은사제들.jfif">   
+    <input type="button" value="보이기">
+<script>
+    var v_src = "";
+    $('img').on({
+    mouseenter:function(){
+        v_src = $(this).attr('src'); //원래 이미지
+        //var v_src2 = $(this).attr('data-src');
+        var v_src2 = $(this).data('src'); //변경될 이미지
+        // console.log(v_src, v_src2)
+        $(this).attr('src',v_src2);
+    }, 
+    mouseleave : function(){
+        $(this).attr('src', v_src);
+    }, 
+    dblclick:function(){
+        $(this).hide();
+        //버튼 보이기
+        if($('img:visible').length < 1)$('[value = "보이기"]').show();
+    }
+});
+$('input[type = button]').on('click',function(){
+    $('img').show();
+    $(this).hide();
+})
+</script>
+</body>
+</html>

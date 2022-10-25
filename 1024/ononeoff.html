@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        .bg{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>on(event,fn) one(event,fn) off(event)</p>
+    <button>event off</button>
+    <script>
+        /*
+            onption - data 
+            {key:value}형태 데이터 작성
+            사용시 event'객체'의 data속성으로 key에 접근
+            ex) e(객체).data.key
+
+            option - map
+            {event:fn, event:fn, ...}
+        */
+
+       $('p').one('click',{msg:"1번"},function(e){
+            //이벤트 '키워드'(비표준)는 기본적인 이벤트 정보는 전달하지만,
+            console.log("one>> " , event.target); 
+            //data는 이벤트 '객체'(표준)를 통해서만 전달받을 수 있음
+            alert(`한번(${e.data.msg}) 실행되는 이벤트 메소드`);
+        });
+
+        $('p').on('mouseover', function(){
+            $(this).toggleClass('bg')
+        });
+
+        $('button').on('click',function(){
+            $('p').off('mouseover')
+        });
+    </script>
+    
+</body>
+</html>

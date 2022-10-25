@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        border: 5px solid oldlace;
+    }
+    .pColor{
+        color : lime;
+    }
+    .pBgYellow{
+        background-color: yellow;
+    }
+    .pBgPurple{
+        background-color: purple;
+    }
+    .pBgTeal{
+        background-color: teal;
+    }
+    .borderGray{
+        border: 5px groove gray;
+        border-radius: 20%;
+    }
+    .borderGold{
+        border: 7px outset gold;
+        border-radius: 15%;
+
+    }
+    div{
+        margin: 10px;
+        padding: 20px;
+    }
+</style>
+<body>
+    <div>
+        <input type="button" value="확인" id="btn">
+        <p>click!!</p>
+        <p>click!!</p>
+        <p>click!!</p>
+        <p>click!!</p>
+
+        <div></div>
+
+        <img src="../images/imgs/우기6.jfif" alt="">
+        <img src="../images/imgs/우기7.jfif" alt="">
+        <img src="../images/imgs/우기8.jfif" alt="">
+        <img src="../images/imgs/우기9.jfif" alt="">
+        <img src="../images/imgs/우기10.jfif" alt="">
+
+    </div>
+    <script>
+        $('#btn').on('click',function(){
+            // $('p').css('color','yellow')//css() 메소드로 스타일지정
+            $('p').addClass('pColor'); //클래스변수와 addClass()로 스타일지정
+        });
+        
+        $('p').on('click',function(){
+            // $(this).addClass('pBgYellow')
+
+            //hasClass와 removeClass를 이용하여 add-remove
+           /* if($(this).hasClass('pBgPurple')){
+                $(this).removeClass('pBgPurple');
+            }else{
+                $(this).addClass('pBgPurple');
+            }*/
+
+            $(this).toggleClass('pBgTeal');
+        })
+
+        $('div:empty').on('mouseover',function(){
+            $(this).addClass('pBgPurple')
+        });
+        $('div:empty').on('mouseout',function(){
+            $(this).removeClass('pBgPurple')
+        });
+        
+       /* $('img').on('mouseover',function(){
+            $(this).addClass('borderGray')
+        });
+        $('img').on('mouseout',function(){
+            $(this).removeClass('borderGray')
+        });*/
+        $('img').hover(function(){
+            $(this).addClass('borderGray')
+        },function(){
+            $(this).removeClass('borderGray')
+        });
+       
+        $('img').click(function(){
+            $(this).toggleClass('borderGold')
+        })
+        function log(p_arg1, p_arg2){
+            console.log(p_arg1, p_arg2)
+        }
+
+        //높이 너비 메소드
+        log($('img').width(),"padding, margin, border 미포함")
+        log($('img').innerWidth(), "padding 포함")
+        log($('img').outerWidth(), "pading, border 포함")
+        
+        
+        
+    </script>
+</body>
+</html>

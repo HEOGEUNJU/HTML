@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="p1">인수로 true설정시 이벤트 처리기도 함께 복사</p>
+
+    <input type = "button" value = "clone">
+    <input type="button" value="cloneTrue">
+    <div id="disp"></div>
+
+    <script>
+        $('#p1').on('click', function(){
+            $(this).css('font-size', '+=1px')
+        })
+        //얕은 복사 - append까지 진행해야 복사완료
+        $('[value="clone"]').click(function(){
+            var cln = $('#p1').clone();
+            $('#disp').append(cln);
+        });
+        //깊은 복사
+        $('[value="cloneTrue"]').click(function(){
+            var clnt = $('#p1').clone(true);
+            $('#disp').append(clnt);
+        });
+    </script>
+</body>
+</html>
